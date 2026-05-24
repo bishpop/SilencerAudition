@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\konal\source\repos\Cpp_Silencer\build\CMakeFiles\80db30f0325e5d3d7d4aed15e140bba3\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{6E52345B-6683-3441-BD9D-D3A4D1091EA0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
