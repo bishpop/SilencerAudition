@@ -3,7 +3,7 @@
 <img src="assets/silencer.png" width="80" alt="Silencer Icon"/>
 
 # Silencer
-### Audio Conversion Tool for Audition — v1.5 (Midnight Elegance)
+### Audio Conversion Tool for Audition — v1.5
 
 [![Download](https://img.shields.io/badge/Download-v1.5-a6e3a1?style=for-the-badge&logo=github)](https://github.com/0x53616E/Silencer/releases/download/v1.5/Silencer.v1.5.exe)
 [![Website](https://img.shields.io/badge/Website-sanyaproject-b4befe?style=for-the-badge)](https://tinyurl.com/sanyaproject)
