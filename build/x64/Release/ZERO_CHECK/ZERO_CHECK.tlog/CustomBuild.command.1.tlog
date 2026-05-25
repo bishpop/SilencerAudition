@@ -1,0 +1,10 @@
+^C:\USERS\KONAL\SOURCE\REPOS\CPP_SILENCER\BUILD\CMAKEFILES\80DB30F0325E5D3D7D4AED15E140BBA3\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/konal/source/repos/Cpp_Silencer -BC:/Users/konal/source/repos/Cpp_Silencer/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/konal/source/repos/Cpp_Silencer/build/Silencer.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
