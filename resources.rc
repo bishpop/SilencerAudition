@@ -1,0 +1,5 @@
+// Silencer – Windows resources
+#include <windows.h>
+
+// App icon  (ID 101 = GLFW / Win32 convention for the main window icon)
+101 ICON "silencer.ico"
