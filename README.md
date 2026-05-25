@@ -3,13 +3,12 @@
 <img src="assets/silencer.png" width="80" alt="Silencer Icon"/>
 
 # Silencer
-### Audio Conversion Tool for Audition — v1.5
+### Audio Conversion Tool for Audition — v1.5 (Midnight Elegance)
 
-[![Download](https://img.shields.io/badge/Download-v1.3.2-a6e3a1?style=for-the-badge&logo=github)](https://github.com/0x53616E/Silencer/releases/download/v1.3.2/Silencer.v1.3.2.exe)
+[![Download](https://img.shields.io/badge/Download-v1.5-a6e3a1?style=for-the-badge&logo=github)](https://github.com/0x53616E/Silencer/releases/download/v1.5/Silencer.v1.5.exe)
 [![Website](https://img.shields.io/badge/Website-sanyaproject-b4befe?style=for-the-badge)](https://tinyurl.com/sanyaproject)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D4?style=for-the-badge&logo=windows)](https://github.com/0x53616E/Silencer)
-[![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-512BD4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48)
-[![Language](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=csharp)](https://github.com/0x53616E/Silencer)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B%20%2F%20ImGui-00599C?style=for-the-badge&logo=cplusplus)](https://github.com/0x53616E/Silencer)
 [![FFmpeg](https://img.shields.io/badge/Requires-FFmpeg-007808?style=for-the-badge&logo=ffmpeg)](https://www.gyan.dev/ffmpeg/builds/)
 [![License](https://img.shields.io/badge/License-MIT-cba6f7?style=for-the-badge)](https://github.com/0x53616E/Silencer/blob/main/LICENSE)
 
@@ -20,12 +19,13 @@
 ## Table of Contents
 
 - [Installation](#1-installation)
-- [Usage](#2-usage)
-  - [First Launch](#first-launch)
+- [New Features in v1.5](#2-new-features-in-v15)
+- [Usage](#3-usage)
+  - [Settings Overview](#settings-overview)
   - [Converting to WAV](#converting-to-wav)
-  - [Converting WAV to OGG](#converting-wav-to-ogg)
+  - [Silencing (WAV to OGG/WAV)](#silencing-wav-to-oggwav)
   - [Finding Offset, BPM & First Space](#finding-offset-bpm--first-space)
-- [Reading the Output](#3-reading-the-output)
+- [Reading the Output](#4-reading-the-output)
 - [Requirements](#requirements)
 
 ---
@@ -36,24 +36,33 @@ Download the latest release from one of the following sources:
 
 | Source | Link |
 |--------|------|
-| **GitHub Releases** | [Silencer.v1.4.exe](https://github.com/0x53616E/Silencer/releases/download/1.4/Silencer.v1.4.exe) |
+| **GitHub Releases** | [Silencer.v1.5.exe](https://github.com/0x53616E/Silencer/releases/download/v1.5/Silencer.v1.5.exe) |
 | **Website** | [tinyurl.com/sanyaproject](https://tinyurl.com/sanyaproject) |
 
-No installation required — just run the `.exe` directly.
+No installation required — just run the `.exe` directly. It is now a lightweight, native C++ application!
 
 <img src="assets/desktop_icon.jpg" alt="Desktop Icon" width="120"/>
 
 ---
 
-## 2. Usage
+## 2. New Features in v1.5
 
-### First Launch
+- **Midnight Elegance Theme:** A completely redesigned, highly responsive ImGui interface.
+- **Smart Clipboard:** Automatically reads your clipboard to suggest the Offset value.
+- **Auto BPM Detection:** FFmpeg automatically scans the audio to estimate and suggest the BPM.
+- **Native C++ Performance:** No longer requires the .NET Framework.
+- **LUFS Normalization:** Optionally normalizes your audio to target EBU R128 (-8 LUFS).
 
-On the very first launch, Silencer will ask you to enter your **Creditor name**. This name will be displayed in the bottom-left corner of the UI for the lifetime of the application.
+---
 
-<img src="assets/first_launch.jpg" alt="First Launch - Creditor Input"/>
+## 3. Usage
 
-Once entered, you will see the main interface:
+### Settings Overview
+Before dropping a file, you can toggle the following settings in the top section:
+
+- **LUFS Normalization:** Automatically adjusts the volume of the song to hit a target of -8 LUFS.
+- **Calculate Madi:** Calculates `StartMadi` & `TotalMadi` including the parity rule and automatically trims the audio.
+- **WAV Output:** If enabled, outputs a `pcm_s16le` WAV file instead of an OGG file.
 
 <img src="assets/user_interface.jpg" alt="User Interface"/>
 
@@ -65,48 +74,41 @@ Silencer supports the following input formats:
 
 | Format | Action |
 |--------|--------|
-| `.wav` | Converted directly to `.ogg` |
+| `.wav` | Triggers the Silencer process (MADI calculation & popups) |
 | `.flac` `.mp3` `.ogg` | **Automatically converted to `.wav` first** |
 
-> **Note:** Silencing (WAV → OGG with MADI values) is only possible from a `.wav` file.  
-> All other formats will be converted to `.wav` automatically — simply drag in the new `.wav` afterwards.
-
-**To start a conversion**, either:
-- Drag & drop any supported file onto the window, or
-- Click the **Silence File** button and select a file
-
-<img src="assets/conversion_to_wav.jpg" alt="Conversion to WAV"/>
+> **Note:** Silencing (calculating MADI values) is only possible from a `.wav` file.  
+> If you drag in an MP3, FLAC, or OGG, Silencer will simply convert it to WAV and stop. Afterwards, drag the newly created `.wav` into the tool to silence it.
 
 ---
 
-### Converting WAV to OGG
+### Silencing (WAV to OGG/WAV)
 
-Select or drop your `.wav` file. If **Calculate MADI Values** is enabled *(recommended)*, the tool will ask for three values before processing:
+Drag & drop your `.wav` file into the drop zone. If **Calculate Madi** is enabled, the tool will ask for three values via popups:
 
 #### 1. Manual Offset
-The audio offset in seconds (e.g. `-0.078`).
+The audio offset in seconds (e.g. `-0.078`). 
+*Pro Tip: If you copy the offset to your clipboard before dropping the file, Silencer will automatically fill it in for you!*
 
 <img src="assets/manual_offset.jpg" alt="Manual Offset Input"/>
 
 #### 2. BPM
-The tempo of the track.
+The tempo of the track. Silencer runs a quick background scan and suggests the detected BPM automatically.
 
 <img src="assets/bpm.jpg" alt="BPM Input"/>
 
 #### 3. First Space Value
-The position of the first beat/space.
+The position of the first beat/space in the timeline.
 
 <img src="assets/start_madi.jpg" alt="First Space Input"/>
 
-After confirming all values, Silencer will generate a new `.ogg` file in the **same folder** as your source `.wav`.
-
-<img src="assets/output.jpg" alt="Output Console"/>
+After confirming all values, Silencer will process the file, update the beautiful metric cards, and generate the final file in the **same folder** as your source `.wav`. You can track everything in the large bottom **Log Area**.
 
 ---
 
 ### Finding Offset, BPM & First Space
 
-All three values can be read directly from **ArrowVortex**:
+If you need to find the values manually, you can read them directly from **ArrowVortex**:
 
 <img src="assets/AV_Overview.jpg" alt="ArrowVortex Overview"/>
 
@@ -118,13 +120,10 @@ All three values can be read directly from **ArrowVortex**:
 
 ---
 
-## 3. Reading the Output
+## 4. Reading the Output
 
-The output filename follows this pattern:
-
-```
-S_<original_name> <BPM> <StartMadi> <TotalMadi>.ogg
-```
+If **Calculate Madi** is enabled, the output filename follows this pattern:
+*(File extension will be `.wav` if the WAV Output toggle is active).*
 
 Example: `S_MySong 128 1 64.ogg`
 
@@ -144,11 +143,11 @@ Example: `S_MySong 128 1 64.ogg`
 | Requirement | Details |
 |-------------|---------|
 | **OS** | Windows 10 / 11 |
-| **FFmpeg** | Must be on your `C:\` drive **or** in the same folder as `Silencer.exe` |
+| **FFmpeg** | Requires `ffmpeg.exe` and `ffprobe.exe` |
 
 **Download FFmpeg (Windows):** [gyan.dev/ffmpeg/builds](https://www.gyan.dev/ffmpeg/builds/)
 
-> Silencer will automatically search for `ffmpeg.exe` — no manual path configuration needed.
+> **Note:** Silencer will automatically search for `ffmpeg.exe` and `ffprobe.exe`. You can place them directly next to `Silencer.exe`, in your System `PATH`, or in common folders like `C:\ffmpeg\bin`.
 
 ---
 
