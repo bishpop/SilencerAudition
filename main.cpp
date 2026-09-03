@@ -2,9 +2,17 @@
  * Silencer - C++ Audio Processing & Conversion Tool
  * Copyright (c) 2026 Sanya (Github: bishpop). All rights reserved.
  * 
- * This source code file is licensed under the MIT License.
- * Note: External third-party libraries (Dear ImGui, miniaudio, libvorbis, ebur128) 
- * and assets (Poppins Font) used in this project are governed by their respective licenses.
+ * LICENSE NOTICE:
+ * The custom source code written for this application (Silencer) is licensed 
+ * under the MIT License. See the LICENSE file in the repository root for details.
+ * 
+ * THIRD-PARTY LICENSES:
+ * This software utilizes external libraries and assets governed by their own official licenses:
+ * - Dear ImGui (https://github.com/ocornut/imgui): Licensed under the MIT License.
+ * - miniaudio (https://github.com/mackron/miniaudio): Public Domain / MIT License.
+ * - libvorbis (https://xiph.org/vorbis/): Licensed under the BSD-style Xiph.Org License.
+ * - libebur128 (https://github.com/jiixyj/libebur128): Licensed under the MIT License.
+ * - Poppins Font (https://fonts.google.com/specimen/Poppins): Licensed under the SIL Open Font License (OFL).
  */
 
 #pragma comment(lib, "d3d11.lib")
