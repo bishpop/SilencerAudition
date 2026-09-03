@@ -1,7 +1,11 @@
-// =============================================================
-//  Silencer v1.6  –  C++ / Dear ImGui  (Win32 + DirectX 11)
-//  Theme: Modern Dashboard (Wide 2-Column, Mint Accent)
-// =============================================================
+/*
+ * Silencer - C++ Audio Processing & Conversion Tool
+ * Copyright (c) 2026 Sanya (Github: bishpop). All rights reserved.
+ * 
+ * This source code file is licensed under the MIT License.
+ * Note: External third-party libraries (Dear ImGui, miniaudio, libvorbis, ebur128) 
+ * and assets (Poppins Font) used in this project are governed by their respective licenses.
+ */
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
