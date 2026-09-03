@@ -56,4 +56,12 @@ This project uses CMake. Note: Some core headers and assets are excluded from th
 
 ## 📄 License
 
-This project utilizes several open-source libraries licensed under MIT, BSD, and OFL. Please refer to the respective header files for their specific license texts.
+This project is open-source software with split licensing:
+
+* **Custom Code:** All original source code written for *Silencer* is licensed under the **MIT License**. Please refer to the [LICENSE](LICENSE) file located in the repository root for the full license text.
+* **Third-Party Dependencies & Assets:** The external libraries and assets utilized in this project are governed by their respective official licenses:
+  * **Dear ImGui** ([GitHub](https://github.com/ocornut/imgui)) — Licensed under the MIT License.
+  * **miniaudio** ([GitHub](https://github.com/mackron/miniaudio)) — Licensed under Public Domain / MIT License.
+  * **libvorbis** ([Xiph.Org](https://xiph.org/vorbis/)) — Licensed under the BSD-style Xiph.Org License.
+  * **libebur128** ([GitHub](https://github.com/jiixyj/libebur128)) — Licensed under the MIT License.
+  * **Poppins Font** ([Google Fonts](https://fonts.google.com/specimen/Poppins)) — Licensed under the SIL Open Font License (OFL).
