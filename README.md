@@ -54,6 +54,24 @@ This project uses CMake. Note: Some core headers and assets are excluded from th
 
 7. The executable will be generated in the build/Release (or equivalent) directory.
 
+8. Structure
+         
+         SilencerAudition/
+         ├── .gitignore              
+         ├── CMakeLists.txt         
+         ├── LICENSE
+         ├── resources.rc
+         ├── silencer.ico                 
+         ├── README.md
+         ├── imgui      (https://github.com/ocornut/imgui)
+         ├── src/                    
+         │   └── main.cpp
+         │   └── font_poppins_regular.h
+         │   └── font_poppins_semibold.h
+         │   └── miniaudio.h      (https://github.com/mackron/miniaudio)
+         └── include/                
+             └── .gitkeep
+   
 ## 📄 License
 
 This project is open-source software with split licensing:
